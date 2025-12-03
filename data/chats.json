@@ -1,0 +1,105 @@
+{
+  "chats": [
+    {
+      "chat_id": "C001",
+      "name": "AgroTech Solutions",
+      "type": "company",
+      "flagged": false,
+      "last_message": "Can you send us the proposal?",
+      "messages": [
+        {
+          "sender": "company",
+          "text": "Hello! We reviewed your IoT portfolio.",
+          "timestamp": "2025-02-01 10:24"
+        },
+        {
+          "sender": "company",
+          "text": "Can you send us the proposal?",
+          "timestamp": "2025-02-01 10:25"
+        }
+      ]
+    },
+
+    {
+      "chat_id": "C002",
+      "name": "UrbanMart",
+      "type": "company",
+      "flagged": true,
+      "last_message": "Thank you! We’ll review it shortly.",
+      "messages": [
+        {
+          "sender": "you",
+          "text": "Hello! Attached is the e-commerce dashboard prototype.",
+          "timestamp": "2025-01-30 16:10"
+        },
+        {
+          "sender": "company",
+          "text": "Thank you! We’ll review it shortly.",
+          "timestamp": "2025-01-30 16:11"
+        }
+      ]
+    },
+
+    {
+      "chat_id": "C003",
+      "name": "Future Robotics Lab",
+      "type": "company",
+      "flagged": false,
+      "last_message": "We need a redesign before Wednesday.",
+      "messages": [
+        {
+          "sender": "company",
+          "text": "Hey, did you check the robotic arm measurements?",
+          "timestamp": "2025-02-02 14:45"
+        },
+        {
+          "sender": "company",
+          "text": "We need a redesign before Wednesday.",
+          "timestamp": "2025-02-02 14:47"
+        }
+      ]
+    },
+
+    {
+      "chat_id": "C004",
+      "name": "CityBuild Co.",
+      "type": "company",
+      "flagged": false,
+      "last_message": "Meeting confirmed for Friday.",
+      "messages": [
+        {
+          "sender": "you",
+          "text": "Can we schedule a meeting for the structural design review?",
+          "timestamp": "2025-01-28 09:15"
+        },
+        {
+          "sender": "company",
+          "text": "Meeting confirmed for Friday.",
+          "timestamp": "2025-01-28 09:17"
+        }
+      ]
+    },
+
+    {
+      "chat_id": "C005",
+      "name": "RH University – CS Dept.",
+      "type": "company",
+      "flagged": true,
+      "last_message": "We will provide the dataset tomorrow.",
+      "messages": [
+        {
+          "sender": "company",
+          "text": "Hi, thanks for accepting the AI classifier project.",
+          "timestamp": "2025-01-27 12:01"
+        },
+        {
+          "sender": "company",
+          "text": "We will provide the dataset tomorrow.",
+          "timestamp": "2025-01-27 12:03"
+        }
+      ]
+    }
+  ],
+
+  "support_messages": []
+}

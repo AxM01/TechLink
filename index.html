@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechLink</title>
+    <link rel="icon" type="image/png" href="img\Untitled-1-02.png">
+
+    <link rel="stylesheet" href="..\style\styles.css">
+    <link rel="stylesheet" href="..\style\common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="jquery/script.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+
+            <div class="logo-area">
+                <img src="img/Untitled-1-02.png" alt="TechLink Hub Logo" class="logo">
+                <h2>TechLink</h2>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="html/engineers.html">Engineers</a>
+                <a href="html/projects.html">Projects</a>
+                <a href="html/about.html">About</a>
+                <a href="html/contact.html">Contact</a>
+            </nav>
+
+            <div class="auth-buttons" id="authButtons">
+                <a href="login-signup.html" class="login-btn">Login</a>
+                <a href="login-signup.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <div id="userDisplay" class="user-display"></div>
+
+
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="container hero-grid">
+
+            <div class="hero-text">
+                <h1>Connecting Innovators with Change Makers</h1>
+                <p>Where innovation meets opportunity. Build, collaborate, and grow your engineering career.</p>
+
+                <button class="btn-primary hero-btn">Find Engineers</button>
+
+                <button class="btn-secondary" onclick="window.location.href='html/projects.html'">
+                    Post a Project
+                </button>
+            </div>
+
+            <div class="hero-image">
+                <img src="img/illustrations/hero-08.png" alt="Tech illustration">
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="about container">
+        <h2 class="section-title">Why TechLink Hub?</h2>
+
+        <div class="pillars">
+            <div class="pillar">
+                <img src="img/illustrations/illust-05.png" class="icon">
+                <h3>Connect</h3>
+                <p>Find skilled engineers or businesses instantly.</p>
+            </div>
+
+            <div class="pillar">
+                <img src="img/illustrations/illust-06.png" class="icon">
+                <h3>Collaborate</h3>
+                <p>Work together on real projects that matter.</p>
+            </div>
+
+            <div class="pillar">
+                <img src="img/illustrations/illust-07.png" class="icon">
+                <h3>Grow</h3>
+                <p>Enhance your skills and build your portfolio.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="categories container">
+        <h2 class="section-title">Engineering Categories</h2>
+
+        <div class="category-grid">
+
+            <div class="cat" onclick="filterCategory('Electrical')">Electrical Engineering</div>
+            <div class="cat" onclick="filterCategory('Mechanical')">Mechanical Engineering</div>
+            <div class="cat" onclick="filterCategory('Civil & Architecture')">Civil & Architecture</div>
+            <div class="cat" onclick="filterCategory('Software & Web')">Software & Web</div>
+            <div class="cat" onclick="filterCategory('Robotics')">Robotics</div>
+            <div class="cat" onclick="filterCategory('AI & Machine Learning')">AI & Machine Learning</div>
+
+        </div>
+    </section>
+
+
+    <section class="cta" id="ctaSection">
+        <h2>Join TechLink Hub Today</h2>
+        <p>Start building the future with the right connections.</p>
+        <button class="btn-primary large cta-create-account">Create Your Account</button>
+    </section>
+
+
+
+  
+    <footer>
+        <div class="container footer-grid">
+
+            <div>
+                <h3>TechLink Hub</h3>
+                <p>&copy; 2025 TechLink Hub. All rights reserved.</p>
+            </div>
+
+            <div>
+                <h4>Links</h4>
+                <a href="html/about.html">About</a><br>
+                <a href="#">Instagram</a><br>
+                <a href="#">LinkedIn</a><br>
+                <a href="html/terms.html">Terms and Conditions</a>
+            </div>
+
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email: support@techlinkhub.com</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

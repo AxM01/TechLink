@@ -1,0 +1,99 @@
+{
+  "engineers": [
+    {
+      "id": "E101",
+      "name": "Lina Mansour",
+      "title": "Electrical Engineer",
+      "image": "../img/engineers/lina.jpg",
+      "skills": ["Circuit Design", "IoT", "Embedded Systems", "Arduino", "Power Electronics"],
+      "experience": "3 years",
+      "rating": 4.8,
+      "bio": "Specialized in embedded systems and IoT applications. Worked on multiple automation solutions for startups.",
+      "portfolio": [
+        {
+          "title": "Smart Home Automation",
+          "image": "https://www.3qmachining.com/wp-content/uploads/2022/09/WHAT-IS-TECHNICAL-DRAWING.jpg"
+        },
+        {
+          "title": "Power Monitoring System",
+          "image": "https://www.3qmachining.com/wp-content/uploads/2022/09/WHAT-IS-TECHNICAL-DRAWING.jpg"
+        }
+      ],
+      "contact": {
+        "email": "lina.mansour@example.com"
+      }
+    },
+
+    {
+      "id": "E102",
+      "name": "Hadi Abou Daher",
+      "title": "Software & Web Developer",
+      "image": "../img/engineers/hadi.jpg",
+      "skills": ["JavaScript", "HTML", "CSS", "Node.js", "Databases"],
+      "experience": "2 years",
+      "rating": 4.6,
+      "bio": "Front-end developer passionate about solving real engineering problems with software.",
+      "portfolio": [
+        {
+          "title": "Inventory Management System",
+          "image": "https://www.3qmachining.com/wp-content/uploads/2022/09/WHAT-IS-TECHNICAL-DRAWING.jpg"
+        },
+        {
+          "title": "University Portal UI",
+          "image": "https://www.3qmachining.com/wp-content/uploads/2022/09/WHAT-IS-TECHNICAL-DRAWING.jpg"
+        }
+      ],
+      "contact": {
+        "email": "hadi.daher@example.com"
+      }
+    },
+
+    {
+      "id": "E103",
+      "name": "Omar Khalil",
+      "title": "Mechanical Engineer",
+      "image": "../img/engineers/omar.jpg",
+      "skills": ["CAD", "SolidWorks", "Manufacturing", "Thermodynamics"],
+      "experience": "4 years",
+      "rating": 4.7,
+      "bio": "Experienced in mechanical system modeling and design. Worked on robotics, machining, and industrial design.",
+      "portfolio": [
+        {
+          "title": "Robotic Arm Prototype",
+          "image": "https://www.3qmachining.com/wp-content/uploads/2022/09/WHAT-IS-TECHNICAL-DRAWING.jpg"
+        },
+        {
+          "title": "HVAC System Simulation",
+          "image": "https://www.3qmachining.com/wp-content/uploads/2022/09/WHAT-IS-TECHNICAL-DRAWING.jpg"
+        }
+      ],
+      "contact": {
+        "email": "omar.khalil@example.com"
+      }
+    },
+
+    {
+      "id": "E104",
+      "name": "Sara Fakhoury",
+      "title": "Civil & Architecture Engineer",
+      "image": "../img/engineers/sara.jpg",
+      "skills": ["AutoCAD", "Structural Analysis", "3D Modeling", "Urban Planning"],
+      "experience": "5 years",
+      "rating": 4.9,
+      "bio": "Architectural engineer focused on sustainable residential and commercial building projects.",
+      "portfolio": [
+        {
+          "title": "Modern Villa Concept",
+          "image": "https://www.3qmachining.com/wp-content/uploads/2022/09/WHAT-IS-TECHNICAL-DRAWING.jpg"
+        },
+        {
+          "title": "Urban Park Redesign",
+          "image": "https://www.3qmachining.com/wp-content/uploads/2022/09/WHAT-IS-TECHNICAL-DRAWING.jpg"
+        }
+      ],
+      "contact": {
+        "email": "sara.fakhoury@example.com"
+      }
+    }
+  ]
+}

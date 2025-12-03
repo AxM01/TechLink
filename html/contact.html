@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" type="image/png" href="../img/Untitled-1-02.png">
+
+    <link rel="stylesheet" href="../style/contstyles.css">
+    <link rel="stylesheet" href="../style/common.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../jquery/contscript.js"></script>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-flex">
+
+            <div class="logo-area">
+                <img src="../img/Untitled-1-02.png" class="logo">
+                <h2>TechLink</h2>
+            </div>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="engineers.html">Engineers</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+
+            <div class="auth-buttons" id="authButtons">
+                <a href="login-signup.html" class="login-btn">Login</a>
+                <a href="login-signup.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <div id="userDisplay" class="user-display"></div>
+
+        </div>
+    </header>
+
+
+
+    <div class="chat-container">
+
+
+        <aside class="chat-list">
+
+            <div class="chat-search">
+                <input type="text" id="chatSearchInput" placeholder="Search chats...">
+            </div>
+            <div id="chatItems" class="chat-items"></div>
+
+        </aside>
+
+
+        <section class="chat-window">
+
+            <div class="chat-header">
+                <h3 id="activeChatName">Select a chat</h3>
+            </div>
+
+            <div id="messagesArea" class="messages-area">
+                <p class="placeholder">Choose a conversation from the left.</p>
+            </div>
+
+            <div class="message-input">
+                <input type="text" id="messageText" placeholder="Type a message...">
+                <button id="sendMessageBtn">Send</button>
+            </div>
+
+        </section>
+
+    </div>
+
+    <section class="support-section container">
+        <h2>Need Help?</h2>
+        <p>If you're facing an issue, message TechLink support below.</p>
+
+        <div class="support-box">
+            <textarea id="supportMessage" placeholder="Describe your issue..."></textarea>
+            <button id="sendSupportMessage">Send to Support</button>
+        </div>
+    </section>
+
+
+    <template id="chatItemTemplate">
+        <div class="chat-item">
+            <div class="chat-info">
+                <h4 class="chat-name"></h4>
+                <p class="chat-preview"></p>
+            </div>
+            <button class="flag-btn">⭐</button>
+        </div>
+    </template>
+    <footer class="footer">
+        <div class="container footer-flex">
+
+            <div>
+                <h4>TechLink</h4>
+                <p>Connecting engineering minds with real-world projects.</p>
+            </div>
+
+            <div>
+                <h4>Links</h4>
+                <a href="about.html">About</a><br>
+                <a href="#">Instagram</a><br>
+                <a href="#">LinkedIn</a><br>
+                <a href="terms.html">Terms and Conditions</a>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email: support@techlink-hub.example</p>
+                <p>Location: Online community</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 TechLink Hub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

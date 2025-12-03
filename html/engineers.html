@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineers</title>
+    <link rel="icon" type="image/png" href="../img/Untitled-1-02.png">
+
+    <link rel="stylesheet" href="../style/engineersstyles.css">
+    <link rel="stylesheet" href="../style/common.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../jquery/engscript.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-flex">
+
+            <div class="logo-area">
+                <img src="../img/Untitled-1-02.png" class="logo">
+                <h2>TechLink</h2>
+            </div>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="engineers.html" class="active">Engineers</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="auth-buttons" id="authButtons">
+                <a href="login-signup.html" class="login-btn">Login</a>
+                <a href="login-signup.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <div id="userDisplay" class="user-display"></div>
+
+        </div>
+    </header>
+
+
+    <section class="container" style="margin-top: 40px;">
+        <h1 class="section-title">Find Professional Engineers</h1>
+
+        <div class="search-container">
+            <input type="text" id="searchText" placeholder="Search name, skills...">
+
+            <select id="searchField">
+                <option value="all">All Fields</option>
+                <option value="Electrical Engineer">Electrical Engineer</option>
+                <option value="Software & Web Developer">Software & Web Developer</option>
+                <option value="Mechanical Engineer">Mechanical Engineer</option>
+                <option value="Civil & Architecture Engineer">Civil & Architecture Engineer</option>
+            </select>
+
+
+            <button id="searchBtn">Search</button>
+        </div>
+
+    </section>
+
+    <section class="container">
+        <div id="engineerCards" class="engineer-grid"></div>
+    </section>
+
+
+    <template id="engineerCardTemplate">
+        <div class="engineer-card">
+            <img class="engineer-img" alt="Engineer Photo">
+
+            <button class="fav-btn">♡</button>
+
+            <div class="engineer-info">
+                <h3 class="eng-name"></h3>
+                <p class="eng-title"></p>
+                <p class="eng-exp"></p>
+                <p class="eng-skills"></p>
+
+                <p class="eng-rating">⭐ <span class="rating-value">0.0</span></p>
+
+                <button class="view-btn">View Profile</button>
+            </div>
+        </div>
+    </template>
+
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+
+            <span class="close-modal">&times;</span>
+
+            <div class="modal-header">
+                <img id="modalImg" class="modal-img">
+                <div>
+                    <h2 id="modalName"></h2>
+                    <p id="modalTitle"></p>
+                    <p id="modalRating"></p>
+                </div>
+            </div>
+
+            <p id="modalExperience"></p>
+            <p id="modalSkills"></p>
+
+            <h3 class="modal-subtitle">About</h3>
+            <p id="modalBio"></p>
+
+            <h3 class="modal-subtitle">Portfolio</h3>
+            <div id="modalPortfolio" class="portfolio-grid"></div>
+
+            <h3 class="modal-subtitle">Contact</h3>
+            <p id="modalEmail"></p>
+
+            <div class="modal-actions">
+                <button id="hireBtn" class="hire-btn">Hire Now</button>
+                <button id="contactBtn" class="contact-btn">Contact</button>
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container footer-flex">
+
+            <div>
+                <h4>TechLink</h4>
+                <p>Connecting engineering minds with real-world projects.</p>
+            </div>
+
+            <div>
+                <h4>Links</h4>
+                <a href="about.html">About</a><br>
+                <a href="#">Instagram</a><br>
+                <a href="#">LinkedIn</a><br>
+                <a href="terms.html">Terms and Conditions</a>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email: support@techlink-hub.example</p>
+                <p>Location: Online community</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 TechLink Hub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
