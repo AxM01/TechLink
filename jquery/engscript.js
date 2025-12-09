@@ -22,19 +22,21 @@ $(function () {
 
         $("#searchField").append(`<option value="starred">Starred Engineers</option>`);
 
-        const params = new URLSearchParams(window.location.search);
-        const selectedCategory = params.get("category");
+        let params = new URLSearchParams(window.location.search);
+        let selectedTitle = params.get("title");
 
-        if (selectedCategory) {
+        if (selectedTitle) {
             let filtered = allEngineers.filter(e =>
-                e.title.toLowerCase().includes(selectedCategory.toLowerCase())
+                e.title.toLowerCase() === selectedTitle.toLowerCase()
             );
+
             initiallyFiltered = true;
             renderEngineers(filtered);
             history.replaceState({}, "", "./engineers.html");
-        } else {
-            renderEngineers(allEngineers);
+            return;
         }
+
+        renderEngineers(allEngineers);
     });
 
     function renderEngineers(list) {
