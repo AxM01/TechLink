@@ -7,6 +7,15 @@ $(function () {
 
         allProjects = data.projects;
 
+        let uniqueFields = new Set();
+        allProjects.forEach(p => {
+            if (p.category) uniqueFields.add(p.category.trim());
+        });
+
+        uniqueFields.forEach(field => {
+            $("#filterField").append(`<option value="${field.toLowerCase()}">${field}</option>`);
+        });
+
         allProjects.forEach(p => {
             if (!p.applications) p.applications = [];
             if (savedApplications[p.id]) {
@@ -27,7 +36,6 @@ $(function () {
 
     function renderProjects(list) {
         $("#projectCards").empty();
-
         list.forEach(project => {
             let card = $("#projectCardTemplate").contents().clone();
             card.find(".project-title").text(project.title);
@@ -40,7 +48,6 @@ $(function () {
     function updateProjectUI(projectID) {
         let project = allProjects.find(p => p.id === projectID);
         if (!project) return;
-
         let card = $(".view-project-btn[data-id='" + projectID + "']").closest(".project-card");
         card.find(".project-title").text(project.title);
         card.find(".project-company").text(project.posted_by.company);
@@ -124,7 +131,6 @@ $(function () {
 
         saveApplications();
         updateProjectUI(projectID);
-
         alert("Your application was submitted!");
 
         $(".view-project-btn[data-id='" + projectID + "']").click();

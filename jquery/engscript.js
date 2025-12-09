@@ -1,14 +1,5 @@
 $(function () {
 
-    const categoryToTitle = {
-        "electrical": "Electrical Engineer",
-        "mechanical": "Mechanical Engineer",
-        "civil": "Civil & Architecture Engineer",
-        "software": "Software & Web Developer",
-        "robotics": "Robotics Engineer",
-        "ai": "AI & Machine Learning Engineer"
-    };
-
     let allEngineers = [];
     let favouriteList = JSON.parse(localStorage.getItem("favourites")) || [];
     let initiallyFiltered = false;
@@ -17,13 +8,26 @@ $(function () {
 
         allEngineers = data.engineers || [];
 
+        let uniqueTitles = new Set();
+        allEngineers.forEach(e => {
+            if (e.title) uniqueTitles.add(e.title.trim());
+        });
+
+        $("#searchField option[value='starred']").remove();
+        $("#searchField option").not("[value='all']").remove();
+
+        uniqueTitles.forEach(title => {
+            $("#searchField").append(`<option value="${title}">${title}</option>`);
+        });
+
+        $("#searchField").append(`<option value="starred">Starred Engineers</option>`);
+
         const params = new URLSearchParams(window.location.search);
         const selectedCategory = params.get("category");
 
-        if (selectedCategory && categoryToTitle[selectedCategory]) {
-            let title = categoryToTitle[selectedCategory];
+        if (selectedCategory) {
             let filtered = allEngineers.filter(e =>
-                e.title.toLowerCase().includes(title.toLowerCase())
+                e.title.toLowerCase().includes(selectedCategory.toLowerCase())
             );
             initiallyFiltered = true;
             renderEngineers(filtered);
@@ -62,6 +66,7 @@ $(function () {
     $(document).on("click", ".fav-btn", function () {
         let engId = $(this).data("id");
         let btn = $(this);
+
         if (favouriteList.includes(engId)) {
             favouriteList = favouriteList.filter(id => id !== engId);
             btn.removeClass("active").text("☆");
@@ -69,6 +74,7 @@ $(function () {
             favouriteList.push(engId);
             btn.addClass("active").text("★");
         }
+
         localStorage.setItem("favourites", JSON.stringify(favouriteList));
     });
 
@@ -78,15 +84,31 @@ $(function () {
             .toLowerCase()
             .trim();
 
-        let selectedTitle = $("#searchField").val();
+        let selectedField = $("#searchField").val();
 
-        if (selectedTitle === "all" && keyword === "") {
+        if (selectedField === "all" && keyword === "") {
             initiallyFiltered = false;
             renderEngineers(allEngineers);
             return;
         }
 
+        if (selectedField === "starred") {
+            let starredList = allEngineers.filter(e =>
+                favouriteList.includes(e.id) &&
+                (
+                    keyword === "" ||
+                    e.name.toLowerCase().includes(keyword) ||
+                    e.title.toLowerCase().includes(keyword) ||
+                    e.skills.join(" ").toLowerCase().includes(keyword) ||
+                    String(e.experience).toLowerCase().includes(keyword)
+                )
+            );
+            renderEngineers(starredList);
+            return;
+        }
+
         let filtered = allEngineers.filter(eng => {
+
             let skillsText = eng.skills.join(" ").toLowerCase();
             let expText = String(eng.experience).toLowerCase();
 
@@ -98,8 +120,8 @@ $(function () {
                 expText.includes(keyword);
 
             let matchField =
-                selectedTitle === "all" ||
-                eng.title === selectedTitle;
+                selectedField === "all" ||
+                eng.title === selectedField;
 
             return matchKeyword && matchField;
         });
@@ -118,6 +140,7 @@ $(function () {
     $(document).on("click", ".view-btn", function () {
         let engineerId = $(this).data("id");
         let eng = allEngineers.find(e => e.id === engineerId);
+
         if (eng) {
             $("#modalImg").attr("src", eng.image);
             $("#modalName").text(eng.name);
@@ -131,12 +154,11 @@ $(function () {
             let portfolioHTML = "";
             eng.portfolio.forEach(item => {
                 portfolioHTML += `
-        <div class="portfolio-item">
-            <img src="${item.image}" class="portfolio-img" alt="${item.title}">
-            <p class="portfolio-title">${item.title}</p>
-        </div>`;
+                    <div class="portfolio-item">
+                        <img src="${item.image}" class="portfolio-img">
+                        <p class="portfolio-title">${item.title}</p>
+                    </div>`;
             });
-
 
             $("#modalPortfolio").html(portfolioHTML);
             $("#profileModal").fadeIn(200);
@@ -155,17 +177,15 @@ $(function () {
 
     if (user) {
         $("#authButtons").hide();
-        $("#userDisplay").text("Welcome, " + user.name).show();
+        $("#userDisplay").text(user.name).show();
     }
 
+    $(document).on("click", "#contactBtn", function () {
+        window.location.href = "contact.html";
+    });
 
-$(document).on("click", "#contactBtn", function () {
-    window.location.href = "contact.html";
-});
-
-$(document).on("click", "#hireBtn", function () {
-    alert("Your hire request has been sent! The engineer will contact you soon.");
-});
-
+    $(document).on("click", "#hireBtn", function () {
+        alert("Your hire request has been sent.");
+    });
 
 });
