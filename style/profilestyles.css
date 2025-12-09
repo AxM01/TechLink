@@ -9,7 +9,6 @@ body {
     padding: 40px 0 70px;
 }
 
-/* ------------------ TITLE + HEADER ------------------ */
 
 .profile-header {
     display: flex;
@@ -41,8 +40,6 @@ body {
     margin: 4px 0;
 }
 
-/* ------------------ TEXT SECTIONS ------------------ */
-
 .profile-section h3 {
     font-size: 22px;
     color: #008c95;
@@ -59,7 +56,6 @@ body {
     color: #333;
 }
 
-/* ------------------ PORTFOLIO GRID ------------------ */
 
 .portfolio-grid {
     background: white;
@@ -77,8 +73,6 @@ body {
     border-radius: 10px;
     object-fit: cover;
 }
-
-/* ------------------ EDIT BOX ------------------ */
 
 .edit-box {
     background: white;
@@ -133,8 +127,6 @@ body {
 .cancel-btn:hover {
     background: #ccc;
 }
-
-/* ------------------ RESPONSIVE ------------------ */
 
 @media (max-width: 768px) {
     .profile-header {
