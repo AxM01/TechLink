@@ -4,18 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Engineer Profile</title>
+
     <link rel="icon" type="image/png" href="../img/Untitled-1-02.png">
 
-    <link rel="stylesheet" href="../style/projstyles.css">
     <link rel="stylesheet" href="../style/common.css">
+    <link rel="stylesheet" href="../style/profilestyles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../jquery/projscript.js"></script>
     <script src="../jquery/commscript.js"></script>
+    <script src="../jquery/profilescript.js"></script>
 </head>
 
 <body>
+
+    <!-- HEADER (same as your other pages) -->
     <header class="main-header">
         <div class="container header-flex">
 
@@ -46,63 +49,47 @@
         </div>
     </header>
 
-    <section class="container" style="margin-top: 40px;">
-        <h1 class="section-title">Available Projects</h1>
-    </section>
+    <!-- ==================== PROFILE SECTION ==================== -->
+    <section class="container profile-section">
 
+        <div class="profile-header">
+    <img id="profileImg" class="profile-img">
 
-    <section class="container project-filters">
-
-        <input type="text" id="searchInput" placeholder="Search projects..." class="search-box">
-
-        <select id="filterField" class="filter-dropdown">
-            <option value="all">All Fields</option>
-            <option value="software">Software</option>
-            <option value="electrical">Electrical</option>
-            <option value="mechanical">Mechanical</option>
-            <option value="civil">Civil</option>
-            <option value="architecture">Architecture</option>
-        </select>
-
-        <button id="searchBtn" class="search-btn">Search</button>
-
-    </section>
-
-
-    <section class="container">
-        <div id="projectCards" class="project-grid"></div>
-    </section>
-
-    <template id="projectCardTemplate">
-        <div class="project-card">
-
-            <div class="project-info">
-                <h3 class="project-title"></h3>
-                <p class="project-company"></p>
-            </div>
-
-            <button class="view-project-btn">View Project</button>
-        </div>
-    </template>
-
-
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-
-            <span class="close-modal">&times;</span>
-
-            <h2 id="modalProjectTitle"></h2>
-            <p id="modalProjectCompany"></p>
-            <p id="modalProjectField"></p>
-            <p id="modalProjectDescription"></p>
-
-            <h3 class="modal-subtitle">Bids & Quotations</h3>
-            <div id="modalBids" class="bid-list"></div>
-
-            <button id="applyBtn" class="apply-btn">Apply Now</button>
-
-        </div>
+    <div>
+        <h1 id="profileName"></h1>
+        <p id="profileTitle"></p>
+        <p id="profileRating"></p>
     </div>
+</div>
+
+<h3>Experience</h3>
+<p id="profileExperience"></p>
+
+<h3>Skills</h3>
+<p id="profileSkills"></p>
+
+<h3>About</h3>
+<p id="profileBio"></p>
+
+<h3>Contact</h3>
+<p id="profileEmail"></p>
+
+<h3>Edit Your Profile</h3>
+<button id="editProfileBtn" class="edit-profile-btn">Edit Profile</button>
+<div id="editBox" class="edit-box" style="display:none;">
+    <input id="editTitle" placeholder="Title">
+    <input id="editExperience" placeholder="Experience">
+    <input id="editSkills" placeholder="Skills">
+    <textarea id="editBio" placeholder="Bio"></textarea>
+    <input id="editEmail" placeholder="Email">
+
+    <button id="saveBtn" class="save-btn">Save Changes</button>
+    <button id="cancelBtn" class="cancel-btn">Cancel</button>
+</div>
+
+
+    </section>
+
     <footer class="footer">
         <div class="container footer-flex">
 
@@ -131,6 +118,7 @@
             <p>&copy; 2025 TechLink Hub. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 
 </html>

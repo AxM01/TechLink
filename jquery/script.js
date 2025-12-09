@@ -83,5 +83,24 @@ $(function () {
 
         $("#ctaSection").hide();
     }
+    function initAuthUI() {
+        let user = JSON.parse(localStorage.getItem("loggedUser"));
+
+        if (user) {
+            $("#authButtons").hide();
+            $("#userDisplay")
+                .text(user.name)
+                .show()
+                .css("cursor", "pointer")
+                .off("click")
+                .on("click", function () {
+                    window.location.href = "../html/profile.html";
+                });
+        } else {
+            $("#authButtons").show();
+            $("#userDisplay").hide();
+        }
+    }
+    initAuthUI();
 
 });

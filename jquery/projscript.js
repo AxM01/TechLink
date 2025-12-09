@@ -1,7 +1,6 @@
 $(function () {
 
     let allProjects = [];
-
     let savedApplications = JSON.parse(localStorage.getItem("projectApplications")) || {};
 
     $.getJSON("../data/projects.json", function (data) {
@@ -18,7 +17,6 @@ $(function () {
         renderProjects(allProjects);
     });
 
-
     function saveApplications() {
         let appData = {};
         allProjects.forEach(p => {
@@ -27,29 +25,31 @@ $(function () {
         localStorage.setItem("projectApplications", JSON.stringify(appData));
     }
 
-
     function renderProjects(list) {
-
         $("#projectCards").empty();
 
         list.forEach(project => {
-
             let card = $("#projectCardTemplate").contents().clone();
-
             card.find(".project-title").text(project.title);
             card.find(".project-company").text(project.posted_by.company);
-
             card.find(".view-project-btn").attr("data-id", project.id);
-
             $("#projectCards").append(card);
         });
     }
 
+    function updateProjectUI(projectID) {
+        let project = allProjects.find(p => p.id === projectID);
+        if (!project) return;
 
-    $("#searchBtn").on("click", function () {
+        let card = $(".view-project-btn[data-id='" + projectID + "']").closest(".project-card");
+        card.find(".project-title").text(project.title);
+        card.find(".project-company").text(project.posted_by.company);
+    }
+
+    $("#searchInput, #filterField").on("input", function () {
 
         let search = $("#searchInput").val().toLowerCase();
-        let field  = $("#filterField").val();
+        let field = $("#filterField").val().toLowerCase();
 
         let filtered = allProjects.filter(p => {
 
@@ -59,18 +59,13 @@ $(function () {
 
             let matchesField =
                 field === "all" ||
-                p.category.toLowerCase().includes(field.toLowerCase());
+                p.category.toLowerCase().includes(field);
 
             return matchesSearch && matchesField;
         });
 
         renderProjects(filtered);
     });
-
-    $("#searchInput").on("keypress", function (e) {
-        if (e.which === 13) $("#searchBtn").click();
-    });
-
 
     $(document).on("click", ".view-project-btn", function () {
 
@@ -101,9 +96,7 @@ $(function () {
             }
 
             $("#modalBids").html(bidsHTML);
-
             $("#applyBtn").attr("data-id", project.id);
-
             $("#projectModal").fadeIn(200);
         }
     });
@@ -130,12 +123,12 @@ $(function () {
         });
 
         saveApplications();
+        updateProjectUI(projectID);
 
         alert("Your application was submitted!");
 
         $(".view-project-btn[data-id='" + projectID + "']").click();
     });
-
 
     $(".close-modal").on("click", function () {
         $("#projectModal").fadeOut(200);

@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3fafa;
+    color: #222;
+}
+
+.profile-section {
+    padding: 40px 0 70px;
+}
+
+/* ------------------ TITLE + HEADER ------------------ */
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    background: white;
+    padding: 20px 22px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.profile-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.profile-header p {
+    font-size: 16px;
+    color: #444;
+    margin: 4px 0;
+}
+
+/* ------------------ TEXT SECTIONS ------------------ */
+
+.profile-section h3 {
+    font-size: 22px;
+    color: #008c95;
+    margin: 20px 0 10px;
+}
+
+.profile-section p {
+    background: white;
+    padding: 18px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ------------------ PORTFOLIO GRID ------------------ */
+
+.portfolio-grid {
+    background: white;
+    padding: 18px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.portfolio-img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ------------------ EDIT BOX ------------------ */
+
+.edit-box {
+    background: white;
+    padding: 20px 22px;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 25px;
+}
+
+.edit-box input,
+.edit-box textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cfd9d9;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #f8fefe;
+}
+
+.edit-box textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.save-btn,
+.cancel-btn {
+    padding: 10px 18px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.save-btn {
+    background: #008c95;
+    color: white;
+    transition: 0.25s;
+}
+
+.save-btn:hover {
+    background: #006f76;
+}
+
+.cancel-btn {
+    background: #ddd;
+    color: #333;
+}
+
+.cancel-btn:hover {
+    background: #ccc;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .profile-section p,
+    .portfolio-grid,
+    .edit-box {
+        padding: 15px 14px;
+    }
+
+    .profile-header {
+        padding: 15px 14px;
+    }
+}
+
+.edit-profile-btn {
+    background: #008c95;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    margin: 20px 0 10px;
+    transition: 0.25s;
+}
+
+.edit-profile-btn:hover {
+    background: #006f76;
+}
