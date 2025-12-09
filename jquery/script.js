@@ -12,33 +12,37 @@ $(function () {
         window.location.href = "html/projects.html";
     });
 
+    let categoryContainer = $(".category-grid");
+
     $.getJSON("data/engineers.json", function (data) {
         let engineers = data.engineers || [];
-        let titles = [];
-        engineers.forEach(function (eng) {
-            if (eng.title && !titles.includes(eng.title)) titles.push(eng.title);
+        let titles = new Set();
+
+        engineers.forEach(e => {
+            if (e.title) titles.add(e.title.trim());
         });
 
-        let grid = $(".category-grid");
-        grid.empty();
-        titles.forEach(function (title) {
-            let item = $("<div>").addClass("cat").text(title);
-            grid.append(item);
+        categoryContainer.empty();
+
+        titles.forEach(title => {
+            categoryContainer.append(`
+                <div class="cat" data-title="${title}">
+                    ${title}
+                </div>
+            `);
         });
     });
 
     $(document).on("click", ".cat", function () {
-        let title = $(this).text().trim();
-        window.location.href = "html/engineers.html?title=" + encodeURIComponent(title);
+        let title = $(this).data("title");
+        let encoded = encodeURIComponent(title);
+        window.location.href = `html/engineers.html?title=${encoded}`;
     });
 
     $(window).on("scroll", function () {
         let scrollPos = $(window).scrollTop();
-        if (scrollPos > 50) {
-            $(".main-header").addClass("scrolled");
-        } else {
-            $(".main-header").removeClass("scrolled");
-        }
+        if (scrollPos > 50) $(".main-header").addClass("scrolled");
+        else $(".main-header").removeClass("scrolled");
     });
 
     function fadeInOnScroll() {
@@ -55,11 +59,8 @@ $(function () {
     $("body").append(`<div id="backToTop">↑</div>`);
 
     $(window).on("scroll", function () {
-        if ($(this).scrollTop() > 200) {
-            $("#backToTop").fadeIn();
-        } else {
-            $("#backToTop").fadeOut();
-        }
+        if ($(this).scrollTop() > 200) $("#backToTop").fadeIn();
+        else $("#backToTop").fadeOut();
     });
 
     $("#backToTop").on("click", function () {
